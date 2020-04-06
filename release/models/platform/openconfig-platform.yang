@@ -716,6 +716,30 @@ module openconfig-platform {
           "Operational state data for backplane components";
       }
     }
+    container holders {
+      description
+        "holders are spaces in a component that can hold other components";
+      list holder{
+           key "holdername";
+           leaf holdername { 
+                   type string;
+           }
+           description
+               "name which uniquely identifies a holder";
+      }
+    }
+    container connectors {
+      description
+        "a physical place where signals produced by the component can be accessed";
+      list connector{
+           key "connectorname";
+           leaf connectorname { 
+                   type string;
+           }
+           description
+               "name which uniquely identifies a connector";
+      }
+    }
   }
 
   grouping platform-component-top {
